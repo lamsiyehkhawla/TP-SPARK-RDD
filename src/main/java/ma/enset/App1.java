@@ -11,7 +11,7 @@ public class App1 {
         SparkConf conf = new SparkConf().setAppName("TotalVentesParVille").setMaster("local[*]");
         JavaSparkContext sc = new JavaSparkContext(conf);
 
-        JavaRDD<String> lines = sc.textFile("C:/Users/Dell/Desktop/RDD/TP_spark_RDD/ventes.txt");
+        JavaRDD<String> lines = sc.textFile("/opt/bitnami/spark/ventes.txt");
 
         JavaPairRDD<String, Double> ventesParVille = lines
                 .mapToPair(line -> {
